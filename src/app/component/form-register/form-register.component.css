@@ -1,0 +1,21 @@
+.containerFormRegister {
+    color: white;
+    width: 50%;
+    height: 40%;
+    background: transparent;
+    position: absolute;
+    top: 20%;
+    left: 49%;
+    transform: translate(-49%, -49%);
+    padding: 1%;
+    padding-block-end: 1%;
+
+}
+
+.form-label {
+    color: whitesmoke;
+    font-style: bold;
+}
+.form-text{
+    color:rgba(127, 255, 212, 0.646);
+}

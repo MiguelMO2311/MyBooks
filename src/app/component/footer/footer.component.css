@@ -1,0 +1,18 @@
+.navbar {
+    position: absolute;
+    top: 100%;
+}
+
+.bloqFooter {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    gap: 5px;
+}
+
+.imageFooter {
+
+    width: 35%;
+    height: 30%;
+
+}

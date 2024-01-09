@@ -1,0 +1,16 @@
+span {
+    color: azure;
+}
+
+span:hover {
+    transition: color 2s ease-in-out;
+    color: red;
+
+}
+
+.imageIconHeader {
+    width: 90px;
+    height: 50px;
+    padding-right: 1%;
+}
+
