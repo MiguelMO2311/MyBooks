@@ -22,7 +22,8 @@ public changeName(input:HTMLInputElement){
 this.user.name = input.value;
 console.log(input.value)
 }
-public changeDataCard(inputName:HTMLInputElement, inputLast_Name:HTMLInputElement,inputEmail:HTMLInputElement ){
+public changeDataCard(inputPhoto: HTMLInputElement, inputName:HTMLInputElement, inputLast_Name:HTMLInputElement,inputEmail:HTMLInputElement ){
+  this.user.photo = inputPhoto.value;
   this.user.name = inputName.value;
   this.user.last_name = inputLast_Name.value;
   this.user.email = inputEmail.value;

@@ -29,6 +29,8 @@
     align-self: center;
     text-align: center;
     background-color: transparent;
+    width: 10rem;
+
     }
     img{
       border-radius: 10%;
@@ -43,14 +45,12 @@
     border-radius: 2px solid white;
  
   }
-  .bloq2-title{
-    text-align: center;
-    color:white;
-    background-color: rgba(237, 184, 127, 0.511);
-    border-radius:2%;
-    font-size: small;
-    
+  #bloq2-title{
+   
+    border-radius:10%;
+
   }
+  
   .btn-outline-info{
     color:rgb(240, 151, 18);
     width: 90px;

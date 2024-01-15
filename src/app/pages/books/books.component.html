@@ -1,0 +1,40 @@
+<div class="container-xxl" id="books-container">
+    <div class="row">
+        @for (book of library; track book.id_book; let odd = $odd;let even = $even){
+        <div class="card">
+            <img src="{{book.photo}}" class="card-img-top" alt="...">
+            <p class="card-text">{{book.type}}</p>
+            <div class="card-body">
+                <h6 class="card-title">{{book.title}}</h6>
+                <p class="card-text-author">{{book.author}}</p>
+                <p class="card-text-ref">{{book.id_book | refBooks}}</p>
+                <h6 class="card-text">{{book.price |euroSymbol}}</h6>
+                <div class="cardButton">
+                    <a href="#" class="btn btn-primary" [ngClass]="{odd: odd, even: even }">Buy</a>
+                </div>
+            </div>
+        </div>}
+        @empty{
+        <div class="alert alert-warning" role="alert">
+            Wow, you don't have any books!
+        </div>}
+    </div>
+
+    <div class="form">
+        <div class="row2">
+            <div class="input-group">
+                <button class="btn btn-warning" type="button">Add book</button>
+                <input type="text" aria-label="Title" class="form-control" placeholder="Title" #title="">
+                <input type="text" aria-label="soft/hard cover" class="form-control" placeholder="Cover (Soft/ Hard)"
+                    #type>
+                <input type="text" aria-label="Author" class="form-control" placeholder="Author" #author>
+                <input type="text" aria-label="Price" class="form-control" placeholder="Price" #price>
+                <input type="text" aria-label="Photo" class="form-control" placeholder="URL photo" #photo>
+                <input type="text" aria-label="Codice" class="form-control" placeholder="Codice Book" #id_book>
+                <input type="text" aria-label="User" class="form-control" placeholder="User" #id_user>
+                <button (click)="insertNewBook(title, type,author,price,photo, id_book, id_user)"
+                    class="btn btn-outline-success" type="button">Insert</button>
+            </div>
+        </div>
+    </div>
+</div>

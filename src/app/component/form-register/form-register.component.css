@@ -1,14 +1,14 @@
+.row{
+    justify-content: center;
+    justify-self: center;
+    padding: 1%;
+}
+
 .containerFormRegister {
     color: white;
     width: 50%;
     height: 40%;
     background: transparent;
-    position: absolute;
-    top: 20%;
-    left: 49%;
-    transform: translate(-49%, -49%);
-    padding: 1%;
-    padding-block-end: 1%;
 
 }
 
@@ -18,4 +18,19 @@
 }
 .form-text{
     color:rgba(127, 255, 212, 0.646);
+}
+input{
+    
+    background-color:rgba(56, 55, 55, 0.324);
+    font-size: medium;
+}
+input:hover{
+    transition:all 2s ease-in-out;
+    background-color: rgb(225, 218, 218);
+    color:black;
+    font-size:larger;
+}
+#basic-addon3{
+    color:rgb(47, 45, 45);
+    background-color:white;
 }

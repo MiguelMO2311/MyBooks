@@ -1,14 +1,6 @@
 .containerForm {
     color: white;
-    width: 98%;
-    height: 84%;
-    background-size: 99%;
+    background-size: 100%;
     background-image: url('/assets/image_formRegister.jpg');
     background-repeat: no-repeat;
-    position: absolute;
-    top: 56%;
-    left: 49%;
-    transform: translate(-49%, -49%);
-    padding: 2%;
-    padding-block-end: 1%;
 }
