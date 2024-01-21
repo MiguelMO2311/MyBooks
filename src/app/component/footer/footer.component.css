@@ -1,16 +1,24 @@
 
-.navbar {
-    box-sizing: border-box;
-    margin:0;
-    height: 25%;
+.row{
+    height: 325px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
+    justify-content: center;
+    align-content: center;
+    
+}
+.navbar {
+    padding-top: 1%;
+    box-sizing: border-box;
+    height: 25%;
+
+   
 }
 
 .bloqFooter {
-    
-   
+    gap:5%;
+    padding-left: 2%;
     display: flex;
     flex-wrap: nowrap;
  
@@ -20,7 +28,7 @@
 
     width: 100px;
     height:50px;
-    padding: 5%;
+    padding: 2%;
 
 }
 .imageFooter:hover{
@@ -28,6 +36,15 @@
     width:105px ;
     height:55px ;
 }
-.textFooter5{
+.textFooter6{
+    display: flex;
+    justify-content: end;
+    padding-left: 15%;
     font-size: xx-small;
+}
+.textFooter7{
+    display: flex;
+    justify-content: end;
+    padding-left: 5%;
+    padding-right: 2%;
 }

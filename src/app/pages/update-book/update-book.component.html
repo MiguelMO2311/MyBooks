@@ -1,0 +1,59 @@
+<div class="container-xxl">
+    <div class="row">
+
+
+        <!-- esto hay que llevarlo a la pagina de books para
+         que se muestre alli junto con el resto de libros -->
+        <div class="bloq1 col-6 bg-warning-subtle opacity 5">
+            <div class="card">
+                <img class="card-img-top" src="{{myBook.photo}}" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{myBook.title}}</h5>
+                    <p class="card-type">{{myBook.type}}</p>
+                    <p class="card-author">{{myBook.author}}</p>
+                    <p class="card-price">{{myBook.price}}</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- esta es la parte del formulario de esta pagina -->
+
+        <div class="bloq2 col-6 bg-transparent">
+            <div class="d-grid col-6">
+                <button class="btn btn-dark" type="button" id="bloq2-title">Edit Data Book</button>
+            </div>
+            <div class="mb-0">
+                <label for="exampleFormControlInput1" class="form-label">Photo</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1"
+                    placeholder="insert url or folder location of Photo" #inputPhoto>
+            </div>
+            <div class="mt-2">
+                <label for="exampleFormControlInput1 " class="form-label">Title</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title Book" #inputTitle>
+            </div>
+            <div class="mb-0">
+                <label for="exampleFormControlInput1" class="form-label">Type</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Type Cover Hard/Soft"
+                    #inputType>
+            </div>
+            <div class="mb-0">
+                <label for="exampleFormControlInput1" class="form-label">Author</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1"
+                    placeholder="name and surnames Author" #inputAuthor>
+            </div>
+            <div class="mb-0">
+                <label for="exampleFormControlInput1" class="form-label">Price</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Price euros"
+                    #inputPrice>
+            </div>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button (click)="changeDataBook(inputPhoto, inputTitle, inputType, inputAuthor, inputPrice)"
+                    class="btn btn-outline-dark" type="button">Edit Book</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>

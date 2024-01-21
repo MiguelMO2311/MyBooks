@@ -1,20 +1,15 @@
-<!-- <div class="row">
-    @for (book of library; track book.id_book; let odd = $odd;let even = $even){
     <div class="card">
-        <img src="{{book.photo}}" class="card-img-top" alt="...">
-        <p class="card-text">{{book.type}}</p>
+        <button (click)="deleteCard(id_book)" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        <img src="{{photo}}" class="card-img-top" alt="...">
+        <p class="card-type">{{type}}</p>
         <div class="card-body">
-            <h6 class="card-title">{{book.title}}</h6>
-            <p class="card-text-author">{{book.author}}</p>
-            <p class="card-text-ref">{{book.id_book | refBooks}}</p>
-            <h6 class="card-text">{{book.price |euroSymbol}}</h6>
+            <h6 class="card-title">{{title}}</h6>
+            <p class="card-text-author">{{author}}</p>
+            <p class="card-text-ref">{{id_book | refBooks}}#id_book</p>
+            <h6 class="card-text">{{price |euroSymbol}}</h6>
             <div class="cardButton">
-                <a href="#" class="btn btn-primary">Buy</a>
+                <a class="btn btn-outline-primary">Buy</a>
             </div>
         </div>
-    </div>}
-    @empty{
-    <div class="alert alert-warning" role="alert">
-        Wow, you don't have any books!
-    </div>}
-</div> -->
+    </div>

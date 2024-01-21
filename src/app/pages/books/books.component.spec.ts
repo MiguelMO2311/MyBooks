@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BooksComponent } from './books.component';
 import { CardsComponent } from '../../component/cards/cards.component';
-import { EuroPipe } from '../../pipes/euro.pipe';
 import { RefBooksPipe } from '../../pipes/ref-books.pipe';
+import { AddBookComponent } from '../add-book/add-book.component';
+import { EuroSymbolPipe } from '../../pipes/euro-symbol.pipe';
 
 describe('BooksComponent', () => {
   let component: BooksComponent;
@@ -10,7 +11,7 @@ describe('BooksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: []
+      imports: [AddBookComponent, CardsComponent, RefBooksPipe, EuroSymbolPipe]
     })
     .compileComponents();
     
