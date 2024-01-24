@@ -15,6 +15,7 @@ import { BooksService } from '../../services/books.service';
 })
 export class CardsComponent {
 
+<<<<<<< HEAD
 
 
   constructor(private readonly bookService: BooksService) {
@@ -28,6 +29,9 @@ export class CardsComponent {
      
         }
 
+=======
+@Input () public book:number = Number();
+>>>>>>> dia4
 
 @Input() public id_book: number = 0;
 @Input() public id_user: number = 0;

@@ -1,19 +1,18 @@
 <div class="container-xxl" id="books-container">
     <div class="row">
-        @if (!singleBook){
-        @for (book of books; track book.id_book;){
-        <div class="col">
-            <app-cards (eventDelete)="deleteBook($event)" [photo]="book.photo" [title]="book.title" [type]="book.type"
-                [author]="book.author" [price]="book.price" [id_book]="book.id_book"
-                (eventInsertBook)="getNewBook ($any($event))" [photo]="book.photo" [title]="book.title"
-                [type]="book.type" [author]="book.author" [price]="book.price" [id_book]="book.id_book"></app-cards>
+    
+            @for (book of library; track book.id_book;){
+            <div class="col">
+            <app-cards  (eventDelete)="deleteBook($event)" [photo]="book.photo" [title]="book.title" [type]="book.type" [author]="book.author"
+                [price]="book.price" [id_book]="book.id_book"  (eventInsertBook)="getNewBook ($any($event))" [photo]="book.photo" [title]="book.title" [type]="book.type" [author]="book.author"
+                [price]="book.price" [id_book]="book.id_book"></app-cards>
 
         </div>}
         @empty{
         <div class="alert alert-warning" role="alert">
             Wow, you don't have any books!
         </div>}
-    }
+    
 
         
         @if (singleBook){
