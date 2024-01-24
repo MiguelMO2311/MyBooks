@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
-import { Books } from '../../models/user';
+import { Component, Input } from '@angular/core';
+import { Books } from '../../models/books';
 import { CommonModule } from '@angular/common';
 import { CardsComponent } from '../../component/cards/cards.component';
+import { AddBookComponent } from '../add-book/add-book.component';
+import { UpdateBookComponent } from '../update-book/update-book.component';
+import { BooksService } from '../../services/books.service';
+import { ActivatedRoute } from '@angular/router';
+import { findIndex } from 'rxjs';
 import { RefBooksPipe } from '../../pipes/ref-books.pipe';
 import { EuroSymbolPipe } from '../../pipes/euro-symbol.pipe';
 
@@ -9,98 +14,43 @@ import { EuroSymbolPipe } from '../../pipes/euro-symbol.pipe';
 @Component({
   selector: 'app-books',
   standalone: true,
-  imports: [CommonModule, CardsComponent, RefBooksPipe, EuroSymbolPipe],
+  imports: [CommonModule, CardsComponent, AddBookComponent, UpdateBookComponent, RefBooksPipe, EuroSymbolPipe],
   templateUrl: './books.component.html',
-  styleUrl: './books.component.css'
+  styleUrl: './books.component.css',
 })
 export class BooksComponent {
-  public myBook: Books
-  constructor() {
-    this.myBook = {
-      id_book: 0,
-      id_user: 0,
-      title: 'dasfdsf',
-      type: '',
-      author: '',
-      price: 0,
-      photo: '/assets/img_book_bn.png',
 
-    }
+  public books: Books[] = [];
+  public singleBook!: Books;
+
+  constructor(private readonly bookService: BooksService, private readonly activatedRoute: ActivatedRoute) {
+
+
   }
-  public library = [
 
-    {
-      id_book: 1,
-      id_user: 1111,
-      title: 'Relato de un naúfrago',
-      type: 'soft',
-      author: 'Gabriel García Márquez',
-      price: 11.35,
-      photo: 'https://imagessl2.casadellibro.com/a/l/s7/62/9788490323762.webp',
-    },
+  ngOnInit(): void {
+    if(!this.singleBook){
+      this.books= this.bookService.getAll()
+    }else{
+      this.singleBook = this.bookService.getOne(this.singleBook.id_book)
+  }
+  }
+  public newBook!: Books;
+  public getNewBook(newBook: Books) {
+    this.newBook = newBook
+    this.books.push(newBook);
+    return this.books;
+  }
 
-    {
-      id_book: 2,
-      id_user: 1111,
-      title: 'La Perla',
-      type: 'hard',
-      author: 'John Steinbeck',
-      price: 16.62,
-      photo: 'https://imagessl8.casadellibro.com/a/l/s7/78/9788468231778.webp',
-    },
+  deleteBook(id: number) {
+    let index = this.books.findIndex(book => book.id_book === id);
+    this.books.splice(index, 1);
 
-    {
-      id_book: 3,
-      id_user: 1111,
-      title: 'Viven',
-      type: 'soft',
-      author: 'Piers Paul Read ',
-      price: 13.30,
-      photo: 'https://imagessl9.casadellibro.com/a/l/s7/69/9788490702369.webp',
-    },
+  }
 
-    {
-      id_book: 4,
-      id_user: 1111,
-      title: 'Alas de Hierro',
-      type: 'hard',
-      author: 'Rebecca Yarros',
-      price: 22.70,
-      photo: 'https://imagessl0.casadellibro.com/a/l/s7/50/9788408284550.webp',
-    },
+  public findBook(id_book: HTMLInputElement) {
+    this.singleBook = this.bookService.getOne(Number(id_book.value))
 
-    {
-      id_book: 5,
-      id_user: 1111,
-      title: 'El problema final',
-      type: 'hard',
-      author: 'Arturo Pérez Reverte',
-      price: 20.80,
-      photo: 'https://imagessl0.casadellibro.com/a/l/s7/60/9788420476360.webp',
-    },
-
-    {
-      id_book: 6,
-      id_user: 1111,
-      title: 'La Armadura de la Luz (...)',
-      type: 'hard',
-      author: 'Ken Follett',
-      price: 23.65,
-      photo: 'https://imagessl0.casadellibro.com/a/l/s7/30/9788401030130.webp',
-    },
-  ]
-  public insertNewBook(title: HTMLInputElement, type: HTMLInputElement, author: HTMLInputElement,
-    price: HTMLInputElement, photo: HTMLInputElement, id_book: HTMLInputElement, id_user: HTMLInputElement) {
-    const newBook: Books = {
-      photo: photo.value,
-      title: title.value,
-      id_book: Number(id_book.value),
-      id_user: Number(id_user.value),
-      type: type.value,
-      author: author.value,
-      price: Number(price.value),
-    }
-    this.library.push(newBook);
   }
 
 }
