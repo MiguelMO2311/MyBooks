@@ -86,15 +86,15 @@ export class BooksService {
    return this.books;
   }
 
-  public getOne(id_book:number) {
+  public getOne(id_book:number):Books {
     const testBook = {
       id_book: 0,
       id_user: 0,
-      title: 'Test',
-      type: 'test',
-      author: 'test',
+      title: 'libro NO EXISTE',
+      type: '......',
+      author: '.....',
       price: 0,
-      photo: '',
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUgOTZOgmpg4qZNjV2BZSnrBNzOHChZs0wmw&usqp=CAU',
     }
     return this.books.find ((books) => books.id_book === id_book) || testBook;
   }

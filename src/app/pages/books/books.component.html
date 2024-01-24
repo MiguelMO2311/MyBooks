@@ -1,6 +1,6 @@
 <div class="container-xxl" id="books-container">
     <div class="row">
-
+        @if (!singleBook){
         @for (book of books; track book.id_book;){
         <div class="col">
             <app-cards (eventDelete)="deleteBook($event)" [photo]="book.photo" [title]="book.title" [type]="book.type"
@@ -13,6 +13,7 @@
         <div class="alert alert-warning" role="alert">
             Wow, you don't have any books!
         </div>}
+    }
 
         
         @if (singleBook){
@@ -33,9 +34,6 @@
         </div>
 
         }
-
-
-
 
 
 

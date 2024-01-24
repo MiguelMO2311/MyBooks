@@ -26,7 +26,6 @@ export class BooksComponent {
   constructor(private readonly bookService: BooksService, private readonly activatedRoute: ActivatedRoute) {
 
 
-
   }
 
   ngOnInit(): void {
@@ -50,10 +49,7 @@ export class BooksComponent {
   }
 
   public findBook(id_book: HTMLInputElement) {
-    let library:Books | null =(this.singleBook = this.bookService.getOne(Number(id_book.value)))
-    if (library = null){
-      this.books = this.bookService.getAll();
-    }this.singleBook = this.bookService.getOne(Number(id_book.value))
+    this.singleBook = this.bookService.getOne(Number(id_book.value))
 
   }
 
