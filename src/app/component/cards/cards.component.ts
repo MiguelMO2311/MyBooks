@@ -28,10 +28,14 @@ export class CardsComponent {
     ngOnInit(): void {
      
         }
+<<<<<<< HEAD
 
 =======
 @Input () public book:number = Number();
 >>>>>>> dia4
+=======
+@Input() public book: number = Number();
+>>>>>>> dia5
 
 @Input() public id_book: number = 0;
 @Input() public id_user: number = 0;

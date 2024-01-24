@@ -8,16 +8,10 @@ import { BooksComponent } from '../pages/books/books.component';
 })
 export class BooksService {
 
-  // private books: Books[] = this.setBooks();
 
-  // public getAllBooks(){
-  //   return this.books;
-  // // }
-  
-  // //   constructor() { }
+  constructor() { }
   
   
-  // private setBooks(){
   private books: Books[] = [
     {
       id_book: 1,
@@ -79,8 +73,7 @@ export class BooksService {
       photo: 'https://imagessl0.casadellibro.com/a/l/s7/30/9788401030130.webp',
     },
   ]
-//   return books;
-// }
+
   
   public getAll():Books[]{
    return this.books;
@@ -90,7 +83,7 @@ export class BooksService {
     const testBook = {
       id_book: 0,
       id_user: 0,
-      title: 'libro NO EXISTE',
+      title: 'Este libro  "NO EXISTE"',
       type: '......',
       author: '.....',
       price: 0,
