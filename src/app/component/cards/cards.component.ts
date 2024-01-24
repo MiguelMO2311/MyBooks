@@ -27,7 +27,7 @@ export class CardsComponent {
     ngOnInit(): void {
      
         }
-
+@Input() public book: number = Number();
 
 @Input() public id_book: number = 0;
 @Input() public id_user: number = 0;
