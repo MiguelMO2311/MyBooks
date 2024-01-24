@@ -1,39 +1,50 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { BooksComponent } from '../books/books.component';
-import { Books } from '../../models/user';
+import { Books } from '../../models/books';
+import { BooksService } from '../../services/books.service';
+import { CardsComponent } from '../../component/cards/cards.component';
 
 @Component({
   selector: 'app-update-book',
   standalone: true,
-  imports: [CommonModule, BooksComponent],
+  imports: [CommonModule, CardsComponent, BooksComponent, UpdateBookComponent], 
   templateUrl: './update-book.component.html',
   styleUrl: './update-book.component.css'
 })
 export class UpdateBookComponent {
-  public myBook: Books
-  constructor() {
-    this.myBook = {
-      id_book: Number(0),
-      id_user: Number(0),
-      title: 'dasfdsf',
-      type: '',
-      author: '',
-      price: Number(0),
-      photo: '/assets/img_book_bn.png',
-    }
+
+
+
+
+  constructor( private readonly bookService: BooksService) {
+
   }
-  public changeDataBook( inputPhoto: HTMLInputElement, inputTitle:HTMLInputElement, inputType:HTMLInputElement,inputAuthor:HTMLInputElement, inputPrice:HTMLInputElement ){
+    
+  ngOnInit(): void {
    
-    // this.myBook.id_book = Number(input_id_book.value);
-    // this.myBook.id_user = Number(inputUser.value);
-    this.myBook.photo = inputPhoto.value;
-    this.myBook.title = inputTitle.value;
-    this.myBook.type = inputType.value;
-    this.myBook.author = inputAuthor.value;
-    this.myBook.price = Number(inputPrice.value);
-console.log(this.myBook);
-
+    
   }
+  
+
+public editBook(title: HTMLInputElement, type: HTMLInputElement, author: HTMLInputElement,
+  price: HTMLInputElement, photo: HTMLInputElement, id_book: HTMLInputElement, id_user: HTMLInputElement) {
+ 
+    const myBook: Books = {
+    photo: photo.value,
+    title: title.value,
+    id_book: Number(id_book.value),
+    id_user: Number(id_user.value),
+    type: type.value,
+    author: author.value,
+    price: Number(price.value),
   }
 
+
+console.log(myBook);
+this.bookService.edit(myBook);
+
+
+}
+
+}
