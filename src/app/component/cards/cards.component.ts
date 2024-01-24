@@ -14,6 +14,8 @@ import { Books } from '../../models/user';
 })
 export class CardsComponent {
 
+@Input () public book:number = Number();
+
 @Input() public id_book: number = 0;
 @Input() public id_user: number = 0;
 @Input() public title: string = '';
