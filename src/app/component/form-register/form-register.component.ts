@@ -16,6 +16,7 @@ export class FormRegisterComponent {
     name: new FormControl('', Validators.required ),
     surnames: new FormControl('', Validators.required ),
     email: new FormControl('',[Validators.required, Validators.email]),
+    url: new FormControl('', Validators.required ),
     password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]),
     passwordRepeat: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(20)])
   });
