@@ -34,3 +34,24 @@ input:hover{
     color:rgb(47, 45, 45);
     background-color:white;
 }
+.error {
+    color: red;
+  }
+  button{
+
+    background-color:rgb(85, 193, 22);
+}
+h2{
+    display: flex;
+    justify-content: center;
+    color:rgb(15, 154, 57); 
+}
+span{
+    display: flex;
+    justify-content: center;
+    color:rgb(33, 33, 177);
+}
+.subtitle-password{
+    color: white;
+    font-size: x-small;
+}

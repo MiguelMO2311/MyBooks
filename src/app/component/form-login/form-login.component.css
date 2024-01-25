@@ -21,7 +21,7 @@
 }
 
 label {
-    color: rgb(66, 126, 52);
+    color: rgb(223, 129, 7);
     font-weight: bold;
 }
 .form-text{
@@ -49,6 +49,7 @@ h2{
     display: flex;
     justify-content: center;
     color:rgb(15, 154, 57); 
+    text-decoration:underline;
 }
 span{
     display: flex;
