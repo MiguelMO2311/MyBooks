@@ -6,6 +6,7 @@ import { BooksComponent } from './pages/books/books.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import { UpdateBookComponent } from './pages/update-book/update-book.component';
 import { BooksService } from './services/books.service';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/Home', pathMatch: 'full' },
@@ -15,5 +16,5 @@ export const routes: Routes = [
     { path: 'Books', component: BooksComponent },
     { path: 'AddBook', component: AddBookComponent },
     { path: 'UpdateBook', component: UpdateBookComponent },
-    { path: 'BookService', component: BooksService },
+    { path: 'Login', component: LoginComponent },
 ];

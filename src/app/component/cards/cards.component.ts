@@ -9,13 +9,12 @@ import { BooksService } from '../../services/books.service';
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [CommonModule, EuroSymbolPipe, RefBooksPipe],
+  imports: [CommonModule, EuroSymbolPipe, RefBooksPipe,BooksComponent],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.css'
 })
 export class CardsComponent {
 
-<<<<<<< HEAD
 
 
   constructor(private readonly bookService: BooksService) {
@@ -28,14 +27,10 @@ export class CardsComponent {
     ngOnInit(): void {
      
         }
-<<<<<<< HEAD
 
-=======
-@Input () public book:number = Number();
->>>>>>> dia4
-=======
+
+
 @Input() public book: number = Number();
->>>>>>> dia5
 
 @Input() public id_book: number = 0;
 @Input() public id_user: number = 0;
