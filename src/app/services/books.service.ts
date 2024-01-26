@@ -97,7 +97,7 @@ export class BooksService {
   }
 
   public edit (book: Books){
-    const index = this.books.findIndex((booking) => booking.id_book === book.id_book);
+    const index = this.books.findIndex((book) => book.id_book === book.id_book);
     this.books[index] = book;
     }
   

@@ -29,14 +29,14 @@ export class CardsComponent {
         }
 @Input() public book: number = Number();
 
-@Input() public id_book: number = 0;
-@Input() public id_user: number = 0;
-@Input() public title: string = '';
-@Input() public type: string = '';
-@Input() public author: string = '';
-@Input() public price: number = 0;
 @Input() public photo: string = '';
-@Input() public library: any;
+@Input() public type: string = '';
+@Input() public title: string = '';
+@Input() public author: string = '';
+@Input() public id_book: number = 0;
+@Input() public price: number = 0;
+@Input() public id_user: number = 0;
+
 
 @Output() eventDelete = new EventEmitter<number>();
 

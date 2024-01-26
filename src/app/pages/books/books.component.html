@@ -3,8 +3,8 @@
         @if (!singleBook){
         @for (book of books; track book.id_book;){
         <div class="col">
-            <app-cards (eventDelete)="deleteBook($event)" [book]="library" 
-                (eventInsertBook)="getNewBook ($any($event))" [book]="library"></app-cards>
+            <app-cards (eventDelete)="deleteBook($event)" [book]="book.id_book" 
+                (eventInsertBook)="getNewBook ($any($event))" [book]="book.id_book"></app-cards>
 
         </div>}
         @empty{
