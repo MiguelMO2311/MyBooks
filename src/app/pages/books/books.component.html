@@ -1,6 +1,6 @@
 <div class="container-xxl" id="books-container">
-    @if (!singleBook){
-    <div class="container-xxl" id="books-container" #id_book>
+
+    <div class="container-xxl" id="books-container">
         <div class="row">
 
             @for (book of books; track book.id_book;){
@@ -14,30 +14,7 @@
                 Wow, you don't have any books!
             </div>}
         </div>
-    </div> }
-
-
-
-        @if (singleBook){
-        <div class="row">
-            <div class="cardSingleBook">
-                <img src="{{singleBook.photo}}" class="card-img-top" alt="...">
-                <p class="card-type">{{singleBook.type}}</p>
-                <div class="card-body">
-                    <h6 class="card-title">{{singleBook.title}}</h6>
-                    <p class="card-text-author">{{singleBook.author}}</p>
-                    <p class="card-text-ref">{{singleBook.id_book| refBooks}}</p>
-                    <h6 class="card-text">{{singleBook.price |euroSymbol}}</h6>
-                    <div class="cardButton">
-                        <a class="btn btn-outline-primary">Buy</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        }
-
-
+    </div> 
 
 
 

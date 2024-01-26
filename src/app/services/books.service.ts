@@ -97,12 +97,16 @@ export class BooksService {
   }
 
   public edit (book: Books){
-    const index = this.books.findIndex((booking) => booking.id_book === book.id_book);
-    this.books[index] = book;
+   const index = this.books.findIndex((booking) => booking.id_book === book.id_book);
+    if (index != -1){
+      this.books[index] = book
+    }
     }
   
   public delete(id_book:number){
     let index = this.books.findIndex(book =>book.id_book === id_book);
-    this.books.splice(index,1);
+    if (index != -1){
+      this.books.splice(index,1);
+    }
 }
 }

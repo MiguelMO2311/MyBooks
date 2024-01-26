@@ -29,11 +29,10 @@ export class BooksComponent {
   }
 
   ngOnInit(): void {
-    if(!this.singleBook){
+    
       this.books= this.bookService.getAll()
-    }else{
-      this.singleBook = this.bookService.getOne(this.singleBook.id_book)
-  }
+   
+     
   }
   public newBook!: Books;
   public getNewBook(newBook: Books) {
@@ -49,8 +48,13 @@ export class BooksComponent {
   }
 
   public findBook(id_book: HTMLInputElement) {
-    this.singleBook = this.bookService.getOne(Number(id_book.value))
+    if(id_book.value === ''){
+      this.books= this.bookService.getAll();
 
+    } else{
+      this.books = [this.bookService.getOne(Number(id_book.value))]
+    }
+    
   }
 
 }
