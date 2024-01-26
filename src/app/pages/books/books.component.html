@@ -1,21 +1,23 @@
 <div class="container-xxl" id="books-container">
     @if (!singleBook){
-        <div class="container-xxl" id="books-container"#id_book>
-            <div class="row">
-            
-                    @for (book of books; track book.id_book;){
-                    <div class="col">
-                    <app-cards  (eventDelete)="deleteBook($event)" [book]="book.id_book"   (eventInsertBook)="getNewBook ($any($event))" [book]="book.id_book" ></app-cards>
-        
-                    </div>}
-                    @empty{
-                    <div class="alert alert-warning" role="alert">
-                        Wow, you don't have any books!
-                    </div>}
-            </div>}
-    
+    <div class="container-xxl" id="books-container" #id_book>
+        <div class="row">
 
-        
+            @for (book of books; track book.id_book;){
+            <div class="col">
+                <app-cards (eventDelete)="deleteBook($event)" [book]="book.id_book"
+                    (eventInsertBook)="getNewBook ($any($event))" [book]="book.id_book"></app-cards>
+
+            </div>}
+            @empty{
+            <div class="alert alert-warning" role="alert">
+                Wow, you don't have any books!
+            </div>}
+        </div>
+    </div> }
+
+
+
         @if (singleBook){
         <div class="row">
             <div class="cardSingleBook">
@@ -38,16 +40,16 @@
 
 
 
-   
-    <div class="form">
-        <div class="row2">
-            <div class="input-group">
-                <button class="btn btn-warning" type="button">Search book</button>
 
-                <input type="text" aria-label="Codice" class="form-control" placeholder="Codice Book" #id_book>
-                <button (click)="findBook(id_book)" class="btn btn-outline-success" type="button">Find Book by
-                    Id</button>
+        <div class="form">
+            <div class="row2">
+                <div class="input-group">
+                    <button class="btn btn-warning" type="button">Search book</button>
+
+                    <input type="text" aria-label="Codice" class="form-control" placeholder="Codice Book" #id_book>
+                    <button (click)="findBook(id_book)" class="btn btn-outline-success" type="button">Find Book by
+                        Id</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
