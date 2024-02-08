@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './add-book.component.css'
 })
 export class AddBookComponent {
-  constructor(private readonly bookService: BooksService) {
+  constructor(public bookService: BooksService) {
  
     
   
@@ -40,6 +40,11 @@ export class AddBookComponent {
   // this.eventInsertBook.emit(newBook)
   console.log(newBook);
   this.bookService.add(newBook);
+
+  this.bookService.addApi(newBook).subscribe((data)=> {
+   console.log (data)
+  
+  })
   
 }
 

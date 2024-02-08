@@ -23,7 +23,7 @@ export class BooksComponent {
   public books: Books[] = [];
   public singleBook!: Books;
 
-  constructor(private readonly bookService: BooksService, private readonly activatedRoute: ActivatedRoute) {
+  constructor(public bookService: BooksService, private readonly activatedRoute: ActivatedRoute) {
 
 
   }
@@ -31,8 +31,12 @@ export class BooksComponent {
   ngOnInit(): void {
     
       this.books= this.bookService.getAll()
-   
-     
+      
+      this.bookService.getAllApi().subscribe((data:any) => { 
+        console.log ('HOLA DATA', data)
+        // this.books = data;
+      })
+
   }
   public newBook!: Books;
   public getNewBook(newBook: Books) {
@@ -45,14 +49,32 @@ export class BooksComponent {
     let index = this.books.findIndex(book => book.id_book === id);
     this.books.splice(index, 1);
 
+    this.bookService.deleteApi(this.newBook).subscribe((data)=> {
+      console.log (data)
+    })
   }
+ 
+
+  // public findBook(id_book: HTMLInputElement) {
+  //   if(id_book.value === ''){
+  //     this.books= this.bookService.getAll();
+
+  //   } else{
+  //     this.books = [this.bookService.getOne(Number(id_book.value))]
+  //   }
+    
+  // }
 
   public findBook(id_book: HTMLInputElement) {
     if(id_book.value === ''){
-      this.books= this.bookService.getAll();
+      this.bookService.getAllApi().subscribe((data:any) => {
+        this.books = data
+      })
 
     } else{
-      this.books = [this.bookService.getOne(Number(id_book.value))]
+      [this.bookService.getOneApi().subscribe((data:any) =>{
+        this.books = data
+      })]
     }
     
   }

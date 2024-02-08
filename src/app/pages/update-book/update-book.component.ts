@@ -17,7 +17,7 @@ export class UpdateBookComponent {
 
 
 
-  constructor( private readonly bookService: BooksService) {
+  constructor( public bookService: BooksService) {
 
   }
     
@@ -44,7 +44,9 @@ public editBook( id_book: HTMLInputElement, photo: HTMLInputElement, title: HTML
 console.log(myBook.photo);
 this.bookService.edit(myBook);
 
+this.bookService.updateApi(myBook).subscribe((data)=> {
+  console.log (data)
+})
 
 }
-
 }
