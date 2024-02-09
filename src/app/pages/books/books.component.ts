@@ -70,6 +70,7 @@ export class BooksComponent {
       this.bookService.getAllApi().subscribe((data:any) => {
         this.books = data
       })
+      
 
     } else{
       [this.bookService.getOneApi().subscribe((data:any) =>{

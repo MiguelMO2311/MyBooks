@@ -41,6 +41,7 @@ public editBook( id_book: HTMLInputElement, photo: HTMLInputElement, title: HTML
   }
 
 
+  
 console.log(myBook.photo);
 this.bookService.edit(myBook);
 
